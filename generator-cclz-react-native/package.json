@@ -1,0 +1,24 @@
+{
+  "name": "generator-cclz-react-native",
+  "version": "0.0.1",
+  "description": "A generator for bootstrapping codecentric labs react-native projects",
+  "files": [
+    "app"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/codecentric-labs-zero/react-native-project-template.git"
+  },
+  "author": "codecentric labs zero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codecentric-labs-zero/react-native-project-template/issues"
+  },
+  "homepage": "https://github.com/codecentric-labs-zero/react-native-project-template#readme",
+  "dependencies": {
+    "yeoman-generator": "^0.24.1"
+  }
+}
