@@ -1,0 +1,29 @@
+machine:
+  node:
+    version: 6.1.0
+  pre:
+    - npm install -g npm@3.x.x
+
+checkout:
+  post:
+    - ./merge-base-ff.sh
+
+deployment:
+  automerge:
+    branch: develop
+    commands:
+      - git config user.email "cc-labs-zero@codecentric.de"
+      - git config user.name "$CIRCLE_USERNAME"
+      - git fetch origin master:master
+      - git checkout master
+      - git merge $CIRCLE_SHA1 --no-edit
+      - git tag -a -m "Released by CircleCI build number $CIRCLE_BUILD_NUM ($CIRCLE_BUILD_URL)" rc-$CIRCLE_BUILD_NUM
+      - git push origin rc-$CIRCLE_BUILD_NUM
+      - git push origin master
+
+general:
+  branches:
+    only:
+      - master
+      - develop
+      - /feature-.*/
