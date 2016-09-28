@@ -14,7 +14,7 @@ deployment:
     commands:
       - git config user.email "cc-labs-zero@codecentric.de"
       - git config user.name "$CIRCLE_USERNAME"
-      - git fetch origin master:master
+      - git fetch --force origin master:master
       - git checkout master
       - git merge $CIRCLE_SHA1 --no-edit
       - git tag -a -m "Released by CircleCI build number $CIRCLE_BUILD_NUM ($CIRCLE_BUILD_URL)" rc-$CIRCLE_BUILD_NUM
