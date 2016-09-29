@@ -52,3 +52,4 @@ ios/main.jsbundle
 coverage
 .floo
 .flooignore
+default-assets/
