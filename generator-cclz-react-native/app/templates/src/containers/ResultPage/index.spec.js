@@ -1,20 +1,22 @@
-import { Provider } from 'react-redux'
-import configureStore from 'redux-mock-store'
-import thunk from 'redux-thunk'
-import React from 'react-native'
-import { mount } from 'enzyme'
-import * as sinon from 'sinon'
-import ResultPage from './index'
-import * as navigationActions from '../../reducers/navigation/actions'
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import React from 'React';
+import renderer from 'react-test-renderer';
 
-const middlewares = [thunk]
-const mockStore = configureStore(middlewares)
+import ResultPage from './index';
+import * as navigationActions from '../../reducers/navigation/actions';
 
-describe('ResultPage', (done) => {
+const middlewares = [thunk];
+const mockStore = configureStore(middlewares);
+
+describe('ResultPage', () => {
+
   it('has onBackButtonClick prop bound to function that dispatches BACK navigation action', () => {
-    const store = mockStore({ app: {}, navigation: {}})
-    const wrapper = mount(<Provider store={store}><ResultPage /></Provider>)
-    wrapper.find(ResultPage).node.renderedElement.props.onBackButtonClick()
-    expect(store.getActions()[0]).to.deep.equal(navigationActions.back())
+    const store = mockStore({ app: {}, navigation: {}});
+    const tree = renderer.create(<Provider store={store}><ResultPage /></Provider>);
+    tree.toJSON().children[0].props.onPress();
+    expect(store.getActions()[0]).toEqual(navigationActions.back());
   })
-})
+
+});

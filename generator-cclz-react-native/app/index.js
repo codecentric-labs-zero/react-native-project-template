@@ -22,6 +22,7 @@ module.exports = generators.Base.extend({
     },
 
     writing: function () {
+        this.fs.delete(this.name + '/__tests__/*');
         this.template(
             'package.json',
             this.name + '/package.json',
@@ -62,7 +63,6 @@ module.exports = generators.Base.extend({
             this.name + '/README.md'
         );
         this.directory('src', this.name + '/src');
-        this.directory('test', this.name + '/test');
         this.directory('android', this.name + '/android');
         this.directory('Images.xcassets', this.name + '/ios/' + this.name + '/Images.xcassets');
         this.directory('default-assets', this.name + '/default-assets');
