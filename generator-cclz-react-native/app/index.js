@@ -22,6 +22,7 @@ module.exports = generators.Base.extend({
     },
 
     writing: function () {
+        this.fs.delete(this.name + '/__tests__/*');
         this.template(
             'package.json',
             this.name + '/package.json',
