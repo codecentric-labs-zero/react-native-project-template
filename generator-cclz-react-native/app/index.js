@@ -67,8 +67,8 @@ module.exports = generators.Base.extend({
           this.name + '/buddybuild_postclone.sh'
         );
         this.copy(
-          '.eslint.js',
-          this.name + '/.eslint.rc'
+          '.eslintrc.js',
+          this.name + '/.eslintrc.js'
         );
         this.directory('src', this.name + '/src');
         this.directory('android', this.name + '/android');
