@@ -62,6 +62,14 @@ module.exports = generators.Base.extend({
             'README.md',
             this.name + '/README.md'
         );
+        this.copy(
+          'buddybuild_postclone.sh',
+          this.name + '/buddybuild_postclone.sh'
+        );
+        this.copy(
+          '.eslint.js',
+          this.name + '/.eslint.rc'
+        );
         this.directory('src', this.name + '/src');
         this.directory('android', this.name + '/android');
         this.directory('Images.xcassets', this.name + '/ios/' + this.name + '/Images.xcassets');
