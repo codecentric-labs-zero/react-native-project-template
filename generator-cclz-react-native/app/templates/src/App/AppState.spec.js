@@ -1,10 +1,8 @@
 jest.mock('redux');
-jest.mock('redux-immutable');
-jest.mock('redux-persist-immutable');
+jest.mock('redux-persist');
 import './AppState';
-import {autoRehydrate, persistStore} from 'redux-persist-immutable';
-import {applyMiddleware} from 'redux';
-import {combineReducers} from 'redux-immutable';
+import {autoRehydrate, persistStore} from 'redux-persist';
+import {combineReducers, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {AsyncStorage} from 'react-native';
 import * as reducers from './AppReducers';

@@ -1,15 +1,14 @@
-import {Map} from 'immutable';
 import ActionTypes from './RegistrationActionTypes';
 import {ActionTypes as HomeActionTypes} from '../Home';
 
-let initialState = Map({});
+let initialState = {};
 
 export default function registration(state = initialState, action) {
   switch (action.type) {
     case ActionTypes.REGISTER:
-      return state.merge({name: action.name});
+      return {...state, name: action.name};
     case HomeActionTypes.UNREGISTER:
-      return state.delete('name');
+      return {...state, name: ''};
     default:
       return state;
   }
