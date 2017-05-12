@@ -16,6 +16,6 @@ After that (assuming you have installed [Yeoman](http://yeoman.io/)), you can cr
 1. Run `yo cclz-react-native` from the parent directory of your future project directory.
 2. Provide a project name (use only letters or react-native will complain)
 3. Always choose overwrite when prompted so by Yeoman
-4. Change into the project directory an run `npm install`
+4. Change into the project directory an run `yarn install` or `npm install`
 5. You should now be able to use `react-native run-ios` and `react-native run-android` to run the example app
-6. `npm test` will execute the example tests.
+6. `yarn test` or `npm test` will execute the example tests. If there are snapshot errors, run `jest --updateSnapshot`.
