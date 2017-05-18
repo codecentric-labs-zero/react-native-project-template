@@ -19,3 +19,10 @@ After that (assuming you have installed [Yeoman](http://yeoman.io/)), you can cr
 4. Change into the project directory an run `npm install`
 5. You should now be able to use `react-native run-ios` and `react-native run-android` to run the example app
 6. `npm test` will execute the example tests.
+
+
+## Scene generator usage
+It is possible to generate scene folder with all needed components.
+
+1. Run `yo ccla-react-native:scene` from root directory of your project (scene will be genereted there)
+2. Provide a scene name (First letter should be uppercase)
