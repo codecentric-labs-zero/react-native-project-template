@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "A generator for bootstrapping codecentric labs react-native projects",
   "files": [
-    "app"
+    "app",
+    "scene"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
